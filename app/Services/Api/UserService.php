@@ -26,8 +26,8 @@ class UserService extends AbstractService implements UserServiceInterface
      * @param $params
      * @return array
      */
-    public function index($params): array
+    public function index($params)
     {
-        return $this->userRepository->getColumns();
+        return $this->userRepository->getColumns()->get();
     }
 }

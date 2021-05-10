@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
-    Route::group(['as' => 'api.v1.', 'middleware' => ['auth:api']], function () {
+    Route::group(['as' => 'api.v1.'], function () {
         Route::group(['prefix' => 'users'], function () {
             Route::get('/', 'UserController@index');
         });

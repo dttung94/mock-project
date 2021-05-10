@@ -36,9 +36,9 @@ services:
       - .data/mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=library
-      - MYSQL_USER=library
-      - MYSQL_PASSWORD=library
+      - MYSQL_DATABASE=request_gate
+      - MYSQL_USER=request_gate
+      - MYSQL_PASSWORD=request_gate
     networks:
       - app-network
 
@@ -48,8 +48,8 @@ services:
       - PMA_ARBITRARY=0
       - PMA_HOST=mysql
       - PMA_PORT=3306
-      - PMA_USER=library
-      - PMA_PASSWORD=library
+      - PMA_USER=request_gate
+      - PMA_PASSWORD=request_gate
     restart: unless-stopped
     ports:
       - "8080:80"
