@@ -30,4 +30,5 @@ class UserService extends AbstractService implements UserServiceInterface
     {
         return $this->userRepository->getColumns()->get();
     }
+
 }

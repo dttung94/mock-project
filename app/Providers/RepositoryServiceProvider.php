@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use App\Contracts\Repositories\CategoryRepositoryInterface;
+use App\Contracts\Repositories\DepartmentRepositoryInterface;
 use App\Contracts\Repositories\UserRepositoryInterface;
+use App\Repositories\CategoryRepository;
+use App\Repositories\DepartmentRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -12,6 +16,16 @@ class RepositoryServiceProvider extends ServiceProvider
         'user' => [
             UserRepositoryInterface::class,
             UserRepository::class,
+        ],
+
+        'category' => [
+            CategoryRepositoryInterface::class,
+            CategoryRepository::class,
+        ],
+
+        'department' => [
+            DepartmentRepositoryInterface::class,
+            DepartmentRepository::class,
         ],
     ];
 

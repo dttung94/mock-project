@@ -15,8 +15,11 @@ use Illuminate\Http\Request;
 
 Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
     Route::group(['as' => 'api.v1.'], function () {
-        Route::group(['prefix' => 'users'], function () {
-            Route::get('/', 'UserController@index');
+        Route::group(['prefix' => 'category'], function () {
+            Route::get('/', 'CategoryController@index');
+            Route::post('/create', 'CategoryController@create');
+            Route::put('/edit/{id}','CategoryController@edit');
+            Route::delete('/delete/{id}', 'CategoryController@destroy');
         });
     });
 });
