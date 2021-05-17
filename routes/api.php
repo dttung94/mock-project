@@ -21,5 +21,14 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
             Route::put('/edit/{id}','CategoryController@edit');
             Route::delete('/delete/{id}', 'CategoryController@destroy');
         });
+
+        Route::group(['prefix' => 'department'], function () {
+            Route::get('/', 'DepartmentController@index');
+            Route::post('/create', 'DepartmentController@create');
+            Route::put('/edit/{id}','DepartmentController@edit');
+            Route::delete('/delete/{id}', 'DepartmentController@destroy');
+        });
     });
+
+
 });
